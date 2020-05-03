@@ -21,7 +21,8 @@ namespace WishList.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            return View(_context.Items);
+            var items = _context.Items.ToList();
+            return View(items);
         }
 
         public IActionResult Create()
